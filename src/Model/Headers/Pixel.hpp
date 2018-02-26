@@ -11,23 +11,27 @@
 class Pixel {
 public:
 	Pixel();
+	Pixel(int r, int g, int b);
+	Pixel(int r, int g, int b, int a);
 	virtual ~Pixel();
 	//Getters
-	int returnRed();
-	int returnGreen();
-	int returnBlue();
+	int getRed();
+	int getGreen();
+	int getBlue();
+	int getAlpha();
 
 
-	//Settings
-	int setRed(int r);
-	int setGreen(int g);
-	int setBlue(int b);
+	//Setters
+	void setRed(int r);
+	void setGreen(int g);
+	void setBlue(int b);
+	void setAlpha(int a);
 private:
 	//Color values
-	int R;
-	int G;
-	int B;
-	int A; //Alpha
+	int r;
+	int g;
+	int b;
+	int a; //Alpha
 
 };
 
