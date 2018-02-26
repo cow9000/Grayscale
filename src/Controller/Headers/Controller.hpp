@@ -12,6 +12,8 @@ class Controller {
 public:
 	Controller();
 	virtual ~Controller();
+private:
+
 };
 
 #endif /* SRC_CONTROLLER_HPP_ */
