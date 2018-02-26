@@ -7,12 +7,12 @@
 
 #include "Headers/Controller.hpp"
 
+
 Controller::Controller() {
-	// TODO Auto-generated constructor stub
 
 }
 
 Controller::~Controller() {
-	// TODO Auto-generated destructor stub
+
 }
 
