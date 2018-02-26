@@ -8,7 +8,7 @@
 #ifndef SRC_CONTROLLER_HPP_
 #define SRC_CONTROLLER_HPP_
 
-#include "../../Model/Headers/lodepng.h"
+#include <iostream>
 
 class Controller {
 public:

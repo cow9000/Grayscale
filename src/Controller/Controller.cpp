@@ -7,7 +7,6 @@
 
 #include "Headers/Controller.hpp"
 
-
 Controller::Controller() {
 
 }
