@@ -21,9 +21,10 @@ The file format for these images are "gray0.png","gray1.png", and so on.
 
 What things you need to install the software and how to install them
 
-```
-Open CV 3.0+ - https://opencv.org/
-```
+
+
+**Open CV 3.0+ - https://opencv.org/**
+
 To install using Anaconda - 
 Open prompt and type command
 ```
