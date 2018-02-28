@@ -28,7 +28,7 @@ open up the command line (cmd, powershell, etc) and navigate to the directory wh
 ```
 grayscale.py -d path/to/images
 ```
-This will convert all images in all subdirectories of that path into grayscale and dump them in a folder called "grayScaledImages"
+This will convert all images in all subdirectories of that path into grayscale and dump them in a folder called "grayScaledImages" (located where you put the grayscale.py file)
 The file format for these images are "gray0.png","gray1.png","gray2.png" and so on.
 
 ## Authors
