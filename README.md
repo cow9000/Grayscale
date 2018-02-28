@@ -11,7 +11,9 @@ This project is used to convert images from RGB/GRB to grayscale. It uses Open C
 
 Download the python file - grayscale.py (inside the src folder), and put it in any directory you like.
 Then in command line go to the directory where you put "grayscale.py" and run the following command
+```
 grayscale.py -d path/to/files
+```
 This will convert all images in all subdirectories of that path into grayscale and dump them in a folder called "grayScaledImages"
 The file format for these images are "gray0.png","gray1.png", and so on.
 
