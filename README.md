@@ -22,14 +22,14 @@ conda install -c menpo opencv
 
 To run the program, you need to download the grayscale.py file located in the Src folder of this project. 
 
-Once you have downloaded the file, place it in any directory you want (Desktop, Documents, etc). Once you have done that
-open up the command line (cmd, powershell, etc) and go to the directory grayscale.py is located. Then run this command to convert the images to grayscale.
+Once you have downloaded the file, 
+open up the command line (cmd, powershell, etc) and go to the directory where grayscale.py is located. Then run this command to convert the images to grayscale.
 
 ```
 grayscale.py -d path/to/images
 ```
 This will convert all images in all subdirectories of that path into grayscale and dump them in a folder called "grayScaledImages"
-The file format for these images are "gray0.png","gray1.png", and so on.
+The file format for these images are "gray0.png","gray1.png","gray2.png" and so on.
 
 ## Authors
 
