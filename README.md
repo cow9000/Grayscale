@@ -2,12 +2,12 @@
 
 This project is used to convert images from RGB/GRB to grayscale. It uses Open CV2 for easy grayscale conversion
 
-# To Do - 
+## To Do - 
 ```
   Crop images
 ```
 
-### Prerequisites
+## Prerequisites
 
 
 **Open CV 3.0+ - https://opencv.org/**
