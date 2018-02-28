@@ -2,6 +2,11 @@
 
 This project is used to convert images from RGB/GRB to grayscale. It uses Open CV2 for easy grayscale conversion
 
+# To Do - 
+```
+  Crop images
+```
+
 ## Getting Started
 
 Download the python file - grayscale.py (inside the src folder), and put it in any directory you like.
@@ -28,4 +33,6 @@ conda install -c menpo opencv
 
 ## Acknowledgments
 
-* CV2 for making this extremely easy
+* CV2 for making this a lot easier than I originally thought it would
+
+
