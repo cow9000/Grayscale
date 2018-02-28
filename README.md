@@ -18,7 +18,7 @@ What things you need to install the software and how to install them
 Open CV 3.0+ - https://opencv.org/
 To install using Anaconda - 
 Open prompt and type command
-*conda install -c menpo opencv*
+conda install -c menpo opencv
 ```
 ## Authors
 
