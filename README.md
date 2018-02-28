@@ -35,8 +35,5 @@ The file format for these images are "gray0.png","gray1.png", and so on.
 
 * **Derek Vawdrey** - *Initial work* - [cow9000](https://github.com/cow9000)
 
-## Acknowledgments
-
-* CV2 for making this a lot easier than I originally thought it would
 
 
