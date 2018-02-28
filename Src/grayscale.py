@@ -13,6 +13,10 @@ def grayscale_images(filepath):
 		for file in files:
 			"""Files in filepath, all of them in all sub directories."""
 			print(os.path.join(subdir,file))
+
+			while os.path.isfile('grayScaledImages/gray' + str(fileNumber) + '.png'):
+				fileNumber+=1
+
 			image = cv2.imread(os.path.join(subdir,file))
 			gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', gray_image)
