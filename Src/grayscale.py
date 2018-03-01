@@ -1,6 +1,17 @@
 import cv2
 import os
 
+def crop_images(width, height, img, **centercord):
+	x,y = cv.getSize(img)
+	x = x/2
+	y = y/2
+	#centercord will have parameters like x, and y. These specify the center of the image of where you want to crop it.
+	if 'x' in centercord:
+		x = centercord['x']
+	if 'y' in centercord:
+		y = centercord['y']
+
+
 def grayscale_images(filepath):
 	"""TO DO: CROP IMAGE"""
 	directory = "grayScaledImages"
