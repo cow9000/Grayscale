@@ -31,7 +31,7 @@ def crop_image(img, width, height, x, y):
 	starty = y//2-(height//2)
 
 	for item in cropImageChunks:
-		if lowWhite < item.totalWhite:
+		if lowWhite < 1000:
 			if item.x > startx:
 				if item.y > starty:
 					lowWhite = item.totalWhite
