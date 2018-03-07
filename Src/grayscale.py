@@ -1,12 +1,49 @@
 import cv2
 import os
 
+class imageChunk:
+	def __init__(self, totalWhite, x, y):
+		self.totalWhite = totalWhite
+		self.x = x
+		self.y = y
+
+
 def crop_image(img, width, height, x, y):
-    startx = x//2-(width//2)
-    starty = y//2-(height//2)    
-    return img[starty:starty+height,startx:startx+width]
+	"""Split image into 16x16 chunks, then find the highest light value possible. Get R,G,B and add each of the pixels in the 16x16 area. The shiniest pixels are the cancer cells"""
+
+	imageY,imageX = img.shape
+	cropImageChunks = []
+	"""First split image into chunks"""
+	for chunkX in range(0,imageX%16):
+		for chunkY in range(0,imageY%16):
+			grayVal = 0
+
+			"""Analyze pixels in chunk"""
+			for pixelX in range(chunkX*16, chunkX*16+16):
+				for pixelY in range(chunkY*16, chunkY*16+16):
+					grayVal += img[pixelX,pixelY]
+
+			chunk = imageChunk(grayVal, chunkX*16+8, chunkY*16+8)
+			cropImageChunks.append(chunk)
+
+	lowWhite = 0
+	startx = x//2-(width//2)
+	starty = y//2-(height//2)
+
+	for item in cropImageChunks:
+		if lowWhite < item.totalWhite:
+			if item.x > startx:
+				if item.y > starty:
+					lowWhite = item.totalWhite
+					startx = item.x
+					starty = item.y
+
+
+
+	return img[starty:starty+height,startx:startx+width]
 
 def grayscale_images(filepath):
+
 	"""TO DO: CROP IMAGE"""
 	directory = "grayScaledImages"
 	if not os.path.exists(directory):
@@ -29,8 +66,6 @@ def grayscale_images(filepath):
 
 			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', crop_image(gray_image,300,300,x,y))
 			fileNumber += 1
-
-			#numpy for cropping
 
 def opt(argv):
 	opts = {}
