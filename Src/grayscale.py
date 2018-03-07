@@ -1,6 +1,11 @@
 import cv2
 import os
 
+def crop_image(img, width, height, x, y):
+    startx = x//2-(width//2)
+    starty = y//2-(height//2)    
+    return img[starty:starty+height,startx:startx+width]
+
 def grayscale_images(filepath):
 	"""TO DO: CROP IMAGE"""
 	directory = "grayScaledImages"
@@ -19,7 +24,10 @@ def grayscale_images(filepath):
 
 			image = cv2.imread(os.path.join(subdir,file))
 			gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', gray_image)
+
+			y,x = gray_image.shape
+
+			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', crop_image(gray_image,300,300,x,y))
 			fileNumber += 1
 
 			#numpy for cropping
