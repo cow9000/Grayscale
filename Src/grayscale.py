@@ -27,11 +27,11 @@ def crop_image(img, width, height, x, y):
 			cropImageChunks.append(chunk)
 
 	lowWhite = 0
-	startx = x//2-(width//2)
-	starty = y//2-(height//2)
+	startx = x//2-200
+	starty = y//2-200
 
 	for item in cropImageChunks:
-		if lowWhite < 1000:
+		if lowWhite < 5500:
 			if item.x > startx:
 				if item.y > starty:
 					lowWhite = item.totalWhite
@@ -64,7 +64,7 @@ def grayscale_images(filepath):
 
 			y,x = gray_image.shape
 
-			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', crop_image(gray_image,300,300,x,y))
+			cv2.imwrite('grayScaledImages/gray' + str(fileNumber) + '.png', crop_image(gray_image,400,400,x,y))
 			fileNumber += 1
 
 def opt(argv):
