@@ -14,33 +14,36 @@ def crop_image(img, width, height, x, y):
 	imageY,imageX = img.shape
 	cropImageChunks = []
 	"""First split image into chunks"""
-	for chunkX in range(0,imageX%16):
-		for chunkY in range(0,imageY%16):
+
+	#Chunk size, so image will be split into (chunkSize by chunkSize) chunks
+	chunkSize = 64
+
+
+	for chunkX in range(0,imageX%chunkSize):
+		for chunkY in range(0,imageY%chunkSize):
 			grayVal = 0
 
 			"""Analyze pixels in chunk"""
-			for pixelX in range(chunkX*16, chunkX*16+16):
-				for pixelY in range(chunkY*16, chunkY*16+16):
+			for pixelX in range(chunkX*chunkSize, chunkX*chunkSize+chunkSize):
+				for pixelY in range(chunkY*chunkSize, chunkY*chunkSize+chunkSize):
 					grayVal += img[pixelX,pixelY]
 
-			chunk = imageChunk(grayVal, chunkX*16+8, chunkY*16+8)
+			chunk = imageChunk(grayVal, chunkX*chunkSize+(chunkSize//2), chunkY*chunkSize+(chunkSize//2))
 			cropImageChunks.append(chunk)
 
-	lowWhite = 0
+	tempWhite = 0
 	startx = x//2-200
 	starty = y//2-200
 
 	for item in cropImageChunks:
-		if lowWhite < 5500:
-			if item.x > startx:
-				if item.y > starty:
-					lowWhite = item.totalWhite
-					startx = item.x
-					starty = item.y
+		if tempWhite < item.totalWhite:
+				tempWhite = item.totalWhite
+				startx = item.x
+				starty = item.y
 
 
 
-	return img[starty:starty+height,startx:startx+width]
+	return img[starty-(height/2):starty+(height/2),startx-(width/2):startx+(width/2)]
 
 def grayscale_images(filepath):
 
